@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,9 +50,14 @@ public class StudentController
 		}
 		else
 		{
-			Gson gson = new Gson();
-			String json = new Gson().toJson(st);
 			return "Welcome "+st.getFirstName()+" "+st.getLastName();
 		}
+	}
+	
+	@RequestMapping("/allstudent")
+	public List getAllStudent()
+	{
+		List<Student> allstudent = studInterface.getAllRegister();
+		return allstudent;
 	}
 }

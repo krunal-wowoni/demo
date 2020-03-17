@@ -1,5 +1,7 @@
 package com.example.demo.serviceImplementation;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +26,11 @@ public class UserImpl implements UserInterface
 	public User login(String userId, String password)
 	{
 		return userr.findAllByUserIdAndPassword(userId, password);
+	}
+
+	@Override
+	public List<User> getAllRegister() 
+	{
+		return userr.findAll();
 	}
 }

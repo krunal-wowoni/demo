@@ -1,5 +1,7 @@
 package com.example.demo.serviceImplementation;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +26,11 @@ public class StudentImpl implements StudentInterface
 	public Student login(String studId, String password)
 	{
 		return studentt.findAllByStudIdAndPassword(studId, password);
+	}
+
+	@Override
+	public List<Student> getAllRegister() 
+	{
+		return studentt.findAll(); 
 	}
 }

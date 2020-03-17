@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.User;
 import com.example.demo.serviceInterface.UserInterface;
-import com.google.gson.Gson;
 
 
 @RestController
@@ -51,9 +52,16 @@ public class UserController
 		}
 		else
 		{
-			Gson gson = new Gson();
-			String json= new Gson().toJson(u);
-			return "Welcome "+ us.getUserId();
+			return "Welcome "+ u.getUserId();
 		}
+	}
+	
+	@RequestMapping("/getallregister")
+	public List allRegister()
+	{
+		List<User> allusers = ui.getAllRegister();
+		
+		return allusers;
+		
 	}
 }
