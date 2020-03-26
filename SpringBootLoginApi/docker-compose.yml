@@ -1,0 +1,29 @@
+version: '3'
+
+ 
+services:
+  db_user mysql:
+    container_name: mysql
+    image: mysql/mysql-server:8
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+    - "3306:3306"
+    restart: always
+
+  registration-login:
+    build: .
+    volumes:
+    - .:/app
+    - ~/.m2:/root/.m2
+    working_dir: /app
+    ports:
+    - 8080:8080
+    command: mvn clean spring-boot:run
+    depends_on:
+    db-user mysql:
+    
+   
+    
