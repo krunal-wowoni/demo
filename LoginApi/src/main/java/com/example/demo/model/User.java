@@ -16,6 +16,7 @@ public class User
 	private String nationalId;
 	private String userId;
 	private String password;
+	
 	public int getId() {
 		return id;
 	}

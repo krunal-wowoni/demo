@@ -42,7 +42,7 @@ public class CommentController
 		}).orElseThrow(() -> new ResourceNotFoundException("PostId "+postId+" not found"));
 	}
 	
-	@PostMapping("/psots/{postId}/comments/{commentId}")
+	@PostMapping("/posts/{postId}/comments/{commentId}")
 	public Comment updateComment(@PathVariable (value = "postId") Long postId, 
 			@PathVariable (value = "commentId") Long commentId, 
 			@Valid @RequestBody Comment commentRequest)
