@@ -29,7 +29,7 @@ public class EmployeeController
 	}
 	
 	@PostMapping(path = "/", consumes = "application/json", produces = "application/json")
-	public ResponseEntity<Object> addEmployee(@RequestBody Employee employee)
+	 public ResponseEntity<Object> addEmployee(@RequestBody Employee employee)
 	{
 		Integer id = employeeDao.getAllEmployees().getEmployeeList().size() +1;
 		employee.setId(id);
