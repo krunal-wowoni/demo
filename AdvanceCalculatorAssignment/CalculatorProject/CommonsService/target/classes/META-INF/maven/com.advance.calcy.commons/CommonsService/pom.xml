@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.advance.calcy</groupId>
+		<artifactId>CalculatorProject</artifactId>
+		<version>0.0.1</version>
+	</parent>
+	<groupId>com.advance.calcy.commons</groupId>
+	<artifactId>CommonsService</artifactId>
+	<version>0.0.1</version>
+	<name>CommonsService</name>
+	<description>Demo Commons Service</description>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+	</dependencies>
+</project>
